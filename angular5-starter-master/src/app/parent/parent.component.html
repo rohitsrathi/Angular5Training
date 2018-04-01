@@ -1,0 +1,28 @@
+<br>
+<div class="container jumbotron text-center">
+  <h1 class=" text-primary">
+    This is a parent component
+  </h1>
+  <p class="lead text-danger">
+    Data going from Parent:
+    <strong>{{no}}</strong>
+    <button class="btn btn-primary" (click)="increase()">+</button>
+  </p>
+
+  <table class="table" *ngIf = "members.length > 0 ">
+      <thead>
+        <tr>   
+          <th>Name</th>
+          <th>Age</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let member of members">
+          <td>{{member.name}}</td>
+          <td>{{member.age}}</td>
+        </tr>
+      </tbody>
+  </table>
+
+</div>
+<app-child [no]="no" (newNo)="noChange($event)" (arrayPassed)="arrayCatched($event)"></app-child>

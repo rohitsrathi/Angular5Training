@@ -1,0 +1,24 @@
+<div class="container card-header">
+  <h1 class=" text-center display-3 ">
+      To-Do List
+  </h1>
+  <p class="lead text-center">
+      Todos List
+  </p>
+</div>
+
+<br>
+
+<div class="container">
+  <div class="card bg-light mb-3" *ngFor="let todo of todos;let i = index">
+      <div class="card-header">
+      <div class="row">
+          <div class="col-sm-11"># {{i}}</div>
+          <div class="col-sm-1">
+            <i [ngClass]="todo.completed ? 'fa fa-check': 'fa fa-close'" 
+            [style.color]="todo.completed ? 'green' : 'red'"></i></div>
+      <div class="card-body">
+          <h4 class="card-title">{{todo.title}}</h4>
+      </div>
+  </div>
+</div>
